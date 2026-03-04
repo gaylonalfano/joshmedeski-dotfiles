@@ -15,9 +15,12 @@ elif [ -n "$(find "$VAULT" -name '*.md' -newer "$STAMP" -print -quit)" ]; then
 fi
 
 if [ "$NEEDS_INDEX" = true ]; then
-  qmd update >/dev/null 2>&1
-  qmd embed >/dev/null 2>&1
+  gum spin --spinner dot --title "Updating vault index..." -- qmd update
+  gum spin --spinner dot --title "Embedding documents..." -- qmd embed
   touch "$STAMP"
 fi
 
-qmd query "$@"
+RESULT=$(gum spin --spinner dot --title "Searching..." -- qmd query "$@" 2>/dev/null) && echo "$RESULT" || {
+  echo "Falling back to keyword search (reranking failed)" >&2
+  qmd search "$@"
+}
