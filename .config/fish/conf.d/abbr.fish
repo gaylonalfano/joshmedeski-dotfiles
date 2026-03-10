@@ -20,7 +20,6 @@ abbr :qa! "tmux kill-server"
 
 abbr ast "aw set -t (aw list | fzf-tmux -p --reverse --preview 'aw set -t {}')"
 abbr av "NVIM_APPNAME=astronvim nvim"
-abbr ai "opencode"
 
 abbr b build
 abbr bi "brew install"
@@ -184,8 +183,6 @@ abbr vpc "nvim +PlugClean"
 abbr vpi "nvim +PlugInstall"
 abbr vpu "nvim +PlugUpdate"
 abbr vpug "nvim +PlugUpgrade"
-abbr vt "nvim ~/.config/tmux/tmux.conf"
-
 abbr x "chmod +x (ls | gum filter --limit 1 --header 'chmod +x')"
 
 abbr za "zoxide add"
