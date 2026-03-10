@@ -34,6 +34,7 @@ abbr bs "brew search"
 abbr bni "bun i"
 
 abbr c clear
+abbr cc claude
 abbr cl clear
 abbr claer clear
 abbr clera clear
@@ -60,6 +61,7 @@ abbr fl "fisher list | sed 's/.*/"&"/'"
 
 abbr g generate
 abbr ga "git add ."
+abbr gap "git add --patch"
 abbr gb "git branch -v"
 abbr gc "git commit"
 abbr gca "git commit -av"
@@ -137,7 +139,6 @@ abbr pd "pnpm dev"
 abbr pe "pnpm e2e"
 abbr pg "pnpm generate"
 abbr ph "pnpm help"
-abbr pi "pnpm install"
 abbr pim "pnpm import"
 abbr pir "pnpm rebuild"
 abbr pit "pnpm install-test"
@@ -154,6 +155,8 @@ abbr pul "pnpm unlink"
 abbr pw "pnpm web"
 abbr pwu "pnpm webUi"
 abbr pwdc "pwd | pbcopy"
+
+abbr qs qmd-search
 
 abbr rmr "rm -rf"
 

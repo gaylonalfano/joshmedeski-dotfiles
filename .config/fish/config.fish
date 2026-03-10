@@ -9,18 +9,25 @@
 # https://fishshell.com/
 # cSpell:words shellcode pkgx direnv
 
-eval (/opt/homebrew/bin/brew shellenv)
+# brew shellenv cached in conf.d/brew.fish
+# Regenerate with: /opt/homebrew/bin/brew shellenv > ~/.config/fish/conf.d/brew.fish
+
+if status --is-interactive
+    if not set -q TMUX
+        sesh_start
+    end
+end
 
 # TODO: waiting for fish support
 # https://github.com/pkgxdev/pkgx/issues/845
 # source (pkgx --shellcode)
 
-starship init fish | source # https://starship.rs/
-zoxide init fish | source # 'ajeetdsouza/zoxide'
-fzf --fish | source
-fnm --log-level quiet env --use-on-cd | source # "Schniz/fnm"
-direnv hook fish | source # https://direnv.net/
-fx --comp fish | source # https://fx.wtf/
+command -q starship; and starship init fish | source # https://starship.rs/
+command -q zoxide; and zoxide init fish | source # 'ajeetdsouza/zoxide'
+command -q fzf; and fzf --fish | source
+command -q fnm; and fnm --log-level quiet env --use-on-cd | source # "Schniz/fnm"
+command -q direnv; and direnv hook fish | source # https://direnv.net/
+command -q fx; and fx --comp fish | source # https://fx.wtf/
 set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every arrow-based directory change (default)
 
 set -U fish_greeting # disable fish greeting
@@ -60,23 +67,25 @@ set -Ux FZF_DEFAULT_OPTS (printf '%s ' \
     '--color=pointer:blue' \
     '--color=preview-border:cyan' | string collect)
 
-# TODO: fix colors of nvimpager
-# set -Ux PAGER "~/.local/bin/nvimpager" # 'lucc/nvimpager'
-set -Ux PAGER nvimpager
-
 # NOTE: "noborus/ov" 🎑Feature-rich terminal-based text viewer. It is a so-called terminal pager.
 # set -Ux PAGER ov
+# TODO: fix colors of nvimpager
+# set -Ux PAGER "~/.local/bin/nvimpager" # 'lucc/nvimpager'
+set -e PAGER nvimpager
+# set -Ux PAGER 'bat --paging=always'
+
 
 # golang - https://golang.google.cn/
-set -Ux GOPATH (go env GOPATH)
+set -Ux GOPATH "$HOME/go"
 fish_add_path $GOPATH/bin
 fish_add_path $HOME/.rustup/toolchains/nightly-aarch64-apple-darwin/bin
 
 fish_add_path $HOME/.config/bin # my custom scripts
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/Library/Python/3.9/bin
+fish_add_path $HOME/.local/share/bob/nvim-bin
 
-set copilot_cli_path (which github-copilot-cli)
+# github-copilot-cli not installed, removed dynamic lookup
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
@@ -92,3 +101,6 @@ set copilot_cli_path (which github-copilot-cli)
 # # <<< conda initialize <<<
 export PATH="/Users/joshmedeski/.gdvm/bin/current_godot:/Users/joshmedeski/.gdvm/bin:$PATH"
 
+
+# Mole completions cached in completions/mole.fish
+# Regenerate with: mole completion fish > ~/.config/fish/completions/mole.fish
