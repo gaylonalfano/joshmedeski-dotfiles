@@ -1,3 +1,0 @@
-set -Ux OLLAMA_ORIGINS "app://obsidian.md*"
-set -Ux OLLAMA_FLASH_ATTENTION 1
-set -Ux OLLAMA_CONTEXT_LENGTH 8192
