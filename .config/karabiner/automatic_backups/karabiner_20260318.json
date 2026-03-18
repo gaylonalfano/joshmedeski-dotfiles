@@ -115,18 +115,25 @@
                                     {
                                         "identifiers": [
                                             {
-                                                "product_id": 45069,
-                                                "vendor_id": 11427
+                                                "vendor_id": 0,
+                                                "product_id": 0
                                             }
                                         ],
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": { "consumer_key_code": "volume_increment" },
+                                "from": {
+                                    "consumer_key_code": "volume_increment"
+                                },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": ["left_command", "left_control", "left_option", "left_shift"]
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -213,15 +220,6 @@
                         "vendor_id": 13364
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_consumer": true,
-                        "product_id": 45069,
-                        "vendor_id": 11427
-                    },
-                    "ignore": false,
-                    "ignore_vendor_events": true
                 }
             ],
             "name": "Default profile",
