@@ -5,7 +5,6 @@
                 "rules": [
                     {
                         "description": "Remap Command+Tab to Option+Tab",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -134,6 +133,372 @@
                         ]
                     },
                     {
+                        "description": "Volume Knob: Mode Switch (Double-Tap Mute)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "mute_pressed_once",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "knob_mode",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "shell_command": "osascript -e 'display notification \"Navigation Mode\" with title \"Volume Knob\"'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "mute_pressed_once",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "knob_mode",
+                                            "value": 2
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "shell_command": "osascript -e 'display notification \"Scroll Mode\" with title \"Volume Knob\"'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "mute_pressed_once",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 2
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "knob_mode",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "shell_command": "osascript -e 'display notification \"Volume Mode\" with title \"Volume Knob\"'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        },
+                                        { "consumer_key_code": "mute" }
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        },
+                                        { "key_code": "return_or_enter" }
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 2
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "mute" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mute_pressed_once",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "mute_pressed_once",
+                                                "value": 0
+                                            }
+                                        },
+                                        { "key_code": "page_down" }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Volume Knob: Navigation Mode (Up/Down Arrows)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "volume_decrement" },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "volume_increment" },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Volume Knob: Scroll Mode",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 2
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "volume_increment" },
+                                "to": [{ "mouse_key": { "vertical_wheel": 32 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 22315,
+                                                "vendor_id": 1155
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "knob_mode",
+                                        "type": "variable_if",
+                                        "value": 2
+                                    }
+                                ],
+                                "from": { "consumer_key_code": "volume_decrement" },
+                                "to": [{ "mouse_key": { "vertical_wheel": -32 } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) | Escape if alone | Use fn + caps lock to enable caps lock",
                         "manipulators": [
                             {
@@ -192,7 +557,9 @@
                         "product_id": 6505,
                         "vendor_id": 12951
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "identifiers": {
@@ -219,6 +586,15 @@
                         "is_consumer": true,
                         "product_id": 45069,
                         "vendor_id": 11427
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true
+                },
+                {
+                    "identifiers": {
+                        "is_consumer": true,
+                        "product_id": 22315,
+                        "vendor_id": 1155
                     },
                     "ignore": false,
                     "ignore_vendor_events": true
