@@ -5,6 +5,7 @@
                 "rules": [
                     {
                         "description": "Remap Command+Tab to Option+Tab",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -107,7 +108,7 @@
                         ]
                     },
                     {
-                        "description": "Bluetooth device: Volume Up → Hyper+Tab",
+                        "description": "DJI Mic 2: Volume Up → Hyper+Tab",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -171,9 +172,7 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "shell_command": "osascript -e 'display notification \"Navigation Mode\" with title \"Volume Knob\"'"
-                                    }
+                                    { "shell_command": "osascript -e 'display notification \"Navigation Mode\" with title \"Volume Knob\"'" }
                                 ],
                                 "type": "basic"
                             },
@@ -213,9 +212,7 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "shell_command": "osascript -e 'display notification \"Scroll Mode\" with title \"Volume Knob\"'"
-                                    }
+                                    { "shell_command": "osascript -e 'display notification \"Scroll Mode\" with title \"Volume Knob\"'" }
                                 ],
                                 "type": "basic"
                             },
@@ -255,9 +252,7 @@
                                             "value": 0
                                         }
                                     },
-                                    {
-                                        "shell_command": "osascript -e 'display notification \"Volume Mode\" with title \"Volume Knob\"'"
-                                    }
+                                    { "shell_command": "osascript -e 'display notification \"Volume Mode\" with title \"Volume Knob\"'" }
                                 ],
                                 "type": "basic"
                             },
