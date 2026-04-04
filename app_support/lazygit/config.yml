@@ -40,27 +40,26 @@ gui:
     "joshmedeski": "blue"
     "Josh Medeski": "blue"
 git:
-  pagers:
-    # - externalDiffCommand: "difft --display=inline"
-    # - externalDiffCommand: difft --color=always
-    # - pager: delta --paging=never
-    - pager: diff-so-fancy
-    - externalDiffCommand: "difft --display=side-by-side"
-      colorArgs: always
-    # - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-    #   colorArg: never
-    # - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-    #   colorArg: never
-    # - pager: ydiff -p cat -s --unified --width={{columnWidth}}
-    #   colorArg: never
+  # pagers:
+  # - externalDiffCommand: "difft --display=inline"
+  # - externalDiffCommand: difft --color=always
+  # - pager: delta --paging=never
+  # - pager: diff-so-fancy
+  # - externalDiffCommand: "difft --display=side-by-side"
+  #   colorArgs: always
+  # - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+  #   colorArg: never
+  # - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+  #   colorArg: never
+  # - pager: ydiff -p cat -s --unified --width={{columnWidth}}
+  #   colorArg: never
 
-
-    # - externalDiffCommand: difft --color=always
-    # - externalDiffCommand: difft --width={{columnWidth}}
-    # - pager: ydiff -p cat -s --wrap --width={{columnWidth}} 
-    #   colorArg: never
-    # - pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-    # - pager: delta --dark --paging=never
+  # - externalDiffCommand: difft --color=always
+  # - externalDiffCommand: difft --width={{columnWidth}}
+  # - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+  #   colorArg: never
+  # - pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  # - pager: delta --dark --paging=never
   merging:
     # only applicable to unix users
     manualCommit: false
@@ -135,19 +134,19 @@ customCommands:
     context: "files"
     loadingText: "Commitizen prompt"
     output: terminal
-  - key: '<c-g>'
-    context: 'files'
-    command: 'lumen draft | tee >(pbcopy)'
-    loadingText: 'Generating message...'
+  - key: "<c-g>"
+    context: "files"
+    command: "lumen draft | tee >(pbcopy)"
+    loadingText: "Generating message..."
     output: popup
-  - key: '<c-G>'
-    context: 'files'
-    command: 'lumen draft -c {{.Form.Context | quote}} | tee >(pbcopy)'
-    loadingText: 'Generating message...'
+  - key: "<c-G>"
+    context: "files"
+    command: "lumen draft -c {{.Form.Context | quote}} | tee >(pbcopy)"
+    loadingText: "Generating message..."
     prompts:
-      - type: 'input'
-        title: 'Context'
-        key: 'Context'
+      - type: "input"
+        title: "Context"
+        key: "Context"
     output: popup
 keybinding:
   universal:
@@ -168,7 +167,7 @@ keybinding:
     nextBlock: "<right>" # goto the next block / panel
     prevBlock-alt: "h" # goto the previous block / panel
     nextBlock-alt: "l" # goto the next block / panel
-    jumpToBlock: [ "1", "2", "3", "4", "5" ] # goto the Nth block / panel
+    jumpToBlock: ["1", "2", "3", "4", "5"] # goto the Nth block / panel
     nextMatch: "n"
     prevMatch: "N"
     optionMenu: "x" # show help menu
@@ -210,7 +209,7 @@ keybinding:
     checkForUpdate: "u"
     recentRepos: "<enter>"
   files:
-    commitChanges: 'c'
+    commitChanges: "c"
     commitChangesWithoutHook: "w" # commit changes without pre-commit hook
     amendLastCommit: "A"
     # commitChangesWithEditor: "C"
