@@ -1,490 +1,452 @@
 {
-  "actions" : [
+  "type": "group",
+  "actions": [
     {
-      "key" : "t",
-      "type" : "application",
-      "value" : "/System/Applications/Utilities/Terminal.app"
+      "key": "c",
+      "type": "url",
+      "iconPath": "clipboard",
+      "value": "raycast://extensions/raycast/clipboard-history/ask-clipboard"
     },
     {
-      "actions" : [
+      "key": "d",
+      "type": "group",
+      "actions": [
         {
-          "key" : "s",
-          "type" : "application",
-          "value" : "/Applications/Safari.app"
+          "key": "d",
+          "type": "url",
+          "iconPath": "tray.and.arrow.down",
+          "value": "raycast://extensions/thomas/downloads-manager/show-latest-download"
         },
         {
-          "key" : "e",
-          "type" : "application",
-          "value" : "/System/Applications/Mail.app"
-        },
-        {
-          "key" : "i",
-          "type" : "application",
-          "value" : "/System/Applications/Music.app"
-        },
-        {
-          "key" : "m",
-          "type" : "application",
-          "value" : "/System/Applications/Messages.app"
-        },
-        {
-          "iconPath" : "pencil.and.list.clipboard",
-          "key" : "c",
-          "label" : "OCR Screen Content to Clipboard",
-          "type" : "url",
-          "value" : "raycast://extensions/huzef44/screenocr/recognize-text-fullscreen"
+          "key": "r",
+          "type": "application",
+          "value": "/Applications/Drafts.app"
         }
-      ],
-      "key" : "o",
-      "type" : "group"
+      ]
     },
     {
-      "actions" : [
+      "key": "m",
+      "type": "group",
+      "actions": [
         {
-          "key" : "e",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+          "key": "c",
+          "type": "url",
+          "iconPath": "text.bubble",
+          "value": "raycast://ai-commands/markdown-callout-generator"
         },
         {
-          "key" : "p",
-          "type" : "url",
-          "value" : "raycast://confetti"
-        },
-        {
-          "key" : "c",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/system/open-camera"
+          "key": "u",
+          "type": "url",
+          "value": "raycast://ai-commands/url-markdown-link"
         }
-      ],
-      "key" : "r",
-      "type" : "group"
+      ]
     },
     {
-      "actions" : [
+      "key": "n",
+      "type": "command",
+      "value": "osascript /Users/joshmedeski/.config/bin/macos-notification-click.applescript\n/macos-notification-click.applescript"
+    },
+    {
+      "key": "r",
+      "type": "group",
+      "actions": [
         {
-          "key" : "u",
-          "type" : "url",
-          "value" : "raycast://ai-commands/url-markdown-link"
+          "key": "c",
+          "type": "url",
+          "value": "raycast://extensions/raycast/system/open-camera"
         },
         {
-          "iconPath" : "text.bubble",
-          "key" : "c",
-          "type" : "url",
-          "value" : "raycast://ai-commands/markdown-callout-generator"
-        }
-      ],
-      "key" : "m",
-      "type" : "group"
-    },
-    {
-      "actions" : [
-        {
-          "iconPath" : "tray.and.arrow.down",
-          "key" : "d",
-          "type" : "url",
-          "value" : "raycast://extensions/thomas/downloads-manager/show-latest-download"
+          "key": "e",
+          "type": "url",
+          "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
-          "key" : "r",
-          "type" : "application",
-          "value" : "/Applications/Drafts.app"
+          "key": "p",
+          "type": "url",
+          "value": "raycast://confetti"
         }
-      ],
-      "key" : "d",
-      "type" : "group"
+      ]
     },
     {
-      "iconPath" : "clipboard",
-      "key" : "c",
-      "type" : "url",
-      "value" : "raycast://extensions/raycast/clipboard-history/ask-clipboard"
+      "key": "s",
+      "type": "url",
+      "iconPath": "inset.filled.rectangle.and.cursorarrow",
+      "value": "raycast://extensions/raycast/selected-text/ask-selected-text"
     },
     {
-      "iconPath" : "inset.filled.rectangle.and.cursorarrow",
-      "key" : "s",
-      "type" : "url",
-      "value" : "raycast://extensions/raycast/selected-text/ask-selected-text"
-    },
-    {
-      "actions" : [
+      "key": "w",
+      "type": "group",
+      "actions": [
         {
-          "actions" : [
+          "key": "a",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/almost-maximize"
+        },
+        {
+          "key": "c",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/center"
+        },
+        {
+          "key": "j",
+          "type": "group",
+          "actions": [
             {
-              "key" : "a",
-              "label" : "move-node-to-workspace a",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace a --focus-follows-window"
+              "key": "h",
+              "type": "command",
+              "label": "left",
+              "value": "/opt/homebrew/bin/aerospace join-with left"
             },
             {
-              "key" : "b",
-              "label" : "move-node-to-workspace b",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace b --focus-follows-window"
+              "key": "j",
+              "type": "command",
+              "label": "down",
+              "value": "/opt/homebrew/bin/aerospace join-with down"
             },
             {
-              "key" : "c",
-              "label" : "move-node-to-workspace c",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace c --focus-follows-window"
+              "key": "k",
+              "type": "command",
+              "label": "up",
+              "value": "/opt/homebrew/bin/aerospace join-with up"
             },
             {
-              "key" : "d",
-              "label" : "move-node-to-workspace d",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace d --focus-follows-window"
-            },
-            {
-              "key" : "e",
-              "label" : "move-node-to-workspace e",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace e --focus-follows-window"
-            },
-            {
-              "key" : "f",
-              "label" : "move-node-to-workspace f",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace f --focus-follows-window"
-            },
-            {
-              "key" : "g",
-              "label" : "move-node-to-workspace g",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace g --focus-follows-window"
-            },
-            {
-              "key" : "h",
-              "label" : "move-node-to-workspace h",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace h --focus-follows-window"
-            },
-            {
-              "key" : "i",
-              "label" : "move-node-to-workspace i",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace i --focus-follows-window"
-            },
-            {
-              "key" : "j",
-              "label" : "move-node-to-workspace j",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace j --focus-follows-window"
-            },
-            {
-              "key" : "k",
-              "label" : "move-node-to-workspace k",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace k --focus-follows-window"
-            },
-            {
-              "key" : "l",
-              "label" : "move-node-to-workspace l",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace l --focus-follows-window"
-            },
-            {
-              "key" : "m",
-              "label" : "move-node-to-workspace m",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace m --focus-follows-window"
-            },
-            {
-              "key" : "n",
-              "label" : "move-node-to-workspace n",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace n --focus-follows-window"
-            },
-            {
-              "key" : "o",
-              "label" : "move-node-to-workspace o",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace o --focus-follows-window"
-            },
-            {
-              "key" : "p",
-              "label" : "move-node-to-workspace p",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace p --focus-follows-window"
-            },
-            {
-              "key" : "q",
-              "label" : "move-node-to-workspace q",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace q --focus-follows-window"
-            },
-            {
-              "key" : "r",
-              "label" : "move-node-to-workspace r",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace r --focus-follows-window"
-            },
-            {
-              "key" : "s",
-              "label" : "move-node-to-workspace s",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace s --focus-follows-window"
-            },
-            {
-              "key" : "t",
-              "label" : "move-node-to-workspace t",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace t --focus-follows-window"
-            },
-            {
-              "key" : "u",
-              "label" : "move-node-to-workspace u",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace u --focus-follows-window"
-            },
-            {
-              "key" : "v",
-              "label" : "move-node-to-workspace v",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace v --focus-follows-window"
-            },
-            {
-              "key" : "w",
-              "label" : "move-node-to-workspace w",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace w --focus-follows-window"
-            },
-            {
-              "key" : "x",
-              "label" : "move-node-to-workspace x",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace x --focus-follows-window"
-            },
-            {
-              "key" : "y",
-              "label" : "move-node-to-workspace y",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace y --focus-follows-window"
-            },
-            {
-              "key" : "z",
-              "label" : "move-node-to-workspace z",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace z --focus-follows-window"
-            },
-            {
-              "key" : "A",
-              "label" : "move-node-to-workspace a",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace a"
-            },
-            {
-              "key" : "B",
-              "label" : "move-node-to-workspace b",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace b"
-            },
-            {
-              "key" : "C",
-              "label" : "move-node-to-workspace c",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace c"
-            },
-            {
-              "key" : "D",
-              "label" : "move-node-to-workspace d",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace d"
-            },
-            {
-              "key" : "E",
-              "label" : "move-node-to-workspace e",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace e"
-            },
-            {
-              "key" : "F",
-              "label" : "move-node-to-workspace f",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace f"
-            },
-            {
-              "key" : "G",
-              "label" : "move-node-to-workspace g",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace g"
-            },
-            {
-              "key" : "H",
-              "label" : "move-node-to-workspace h",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace h"
-            },
-            {
-              "key" : "I",
-              "label" : "move-node-to-workspace i",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace i"
-            },
-            {
-              "key" : "J",
-              "label" : "move-node-to-workspace j",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace j"
-            },
-            {
-              "key" : "K",
-              "label" : "move-node-to-workspace k",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace k"
-            },
-            {
-              "key" : "L",
-              "label" : "move-node-to-workspace l",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace l"
-            },
-            {
-              "key" : "M",
-              "label" : "move-node-to-workspace m",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace m"
-            },
-            {
-              "key" : "N",
-              "label" : "move-node-to-workspace n",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace n"
-            },
-            {
-              "key" : "O",
-              "label" : "move-node-to-workspace o",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace o"
-            },
-            {
-              "key" : "P",
-              "label" : "move-node-to-workspace p",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace p"
-            },
-            {
-              "key" : "Q",
-              "label" : "move-node-to-workspace q",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace q"
-            },
-            {
-              "key" : "R",
-              "label" : "move-node-to-workspace r",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace r"
-            },
-            {
-              "key" : "S",
-              "label" : "move-node-to-workspace s",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace s"
-            },
-            {
-              "key" : "T",
-              "label" : "move-node-to-workspace t",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace t"
-            },
-            {
-              "key" : "U",
-              "label" : "move-node-to-workspace u",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace u"
-            },
-            {
-              "key" : "V",
-              "label" : "move-node-to-workspace v",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace v"
-            },
-            {
-              "key" : "W",
-              "label" : "move-node-to-workspace w",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace w"
-            },
-            {
-              "key" : "X",
-              "label" : "move-node-to-workspace x",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace x"
-            },
-            {
-              "key" : "Y",
-              "label" : "move-node-to-workspace y",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace y"
-            },
-            {
-              "key" : "Z",
-              "label" : "move-node-to-workspace z",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace move-node-to-workspace z"
+              "key": "l",
+              "type": "command",
+              "label": "right",
+              "value": "/opt/homebrew/bin/aerospace join-with right"
             }
           ],
-          "key" : "m",
-          "type" : "group"
+          "label": "join-with"
         },
         {
-          "actions" : [
+          "key": "m",
+          "type": "group",
+          "actions": [
             {
-              "key" : "h",
-              "label" : "left",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace join-with left"
+              "key": "a",
+              "type": "command",
+              "label": "move-node-to-workspace a",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace a --focus-follows-window"
             },
             {
-              "key" : "j",
-              "label" : "down",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace join-with down"
+              "key": "A",
+              "type": "command",
+              "label": "move-node-to-workspace a",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace a"
             },
             {
-              "key" : "k",
-              "label" : "up",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace join-with up"
+              "key": "b",
+              "type": "command",
+              "label": "move-node-to-workspace b",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace b --focus-follows-window"
             },
             {
-              "key" : "l",
-              "label" : "right",
-              "type" : "command",
-              "value" : "/opt/homebrew/bin/aerospace join-with right"
+              "key": "B",
+              "type": "command",
+              "label": "move-node-to-workspace b",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace b"
+            },
+            {
+              "key": "c",
+              "type": "command",
+              "label": "move-node-to-workspace c",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace c --focus-follows-window"
+            },
+            {
+              "key": "C",
+              "type": "command",
+              "label": "move-node-to-workspace c",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace c"
+            },
+            {
+              "key": "d",
+              "type": "command",
+              "label": "move-node-to-workspace d",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace d --focus-follows-window"
+            },
+            {
+              "key": "D",
+              "type": "command",
+              "label": "move-node-to-workspace d",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace d"
+            },
+            {
+              "key": "e",
+              "type": "command",
+              "label": "move-node-to-workspace e",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace e --focus-follows-window"
+            },
+            {
+              "key": "E",
+              "type": "command",
+              "label": "move-node-to-workspace e",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace e"
+            },
+            {
+              "key": "f",
+              "type": "command",
+              "label": "move-node-to-workspace f",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace f --focus-follows-window"
+            },
+            {
+              "key": "F",
+              "type": "command",
+              "label": "move-node-to-workspace f",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace f"
+            },
+            {
+              "key": "g",
+              "type": "command",
+              "label": "move-node-to-workspace g",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace g --focus-follows-window"
+            },
+            {
+              "key": "G",
+              "type": "command",
+              "label": "move-node-to-workspace g",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace g"
+            },
+            {
+              "key": "h",
+              "type": "command",
+              "label": "move-node-to-workspace h",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace h --focus-follows-window"
+            },
+            {
+              "key": "H",
+              "type": "command",
+              "label": "move-node-to-workspace h",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace h"
+            },
+            {
+              "key": "i",
+              "type": "command",
+              "label": "move-node-to-workspace i",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace i --focus-follows-window"
+            },
+            {
+              "key": "I",
+              "type": "command",
+              "label": "move-node-to-workspace i",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace i"
+            },
+            {
+              "key": "j",
+              "type": "command",
+              "label": "move-node-to-workspace j",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace j --focus-follows-window"
+            },
+            {
+              "key": "J",
+              "type": "command",
+              "label": "move-node-to-workspace j",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace j"
+            },
+            {
+              "key": "k",
+              "type": "command",
+              "label": "move-node-to-workspace k",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace k --focus-follows-window"
+            },
+            {
+              "key": "K",
+              "type": "command",
+              "label": "move-node-to-workspace k",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace k"
+            },
+            {
+              "key": "l",
+              "type": "command",
+              "label": "move-node-to-workspace l",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace l --focus-follows-window"
+            },
+            {
+              "key": "L",
+              "type": "command",
+              "label": "move-node-to-workspace l",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace l"
+            },
+            {
+              "key": "m",
+              "type": "command",
+              "label": "move-node-to-workspace m",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace m --focus-follows-window"
+            },
+            {
+              "key": "M",
+              "type": "command",
+              "label": "move-node-to-workspace m",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace m"
+            },
+            {
+              "key": "n",
+              "type": "command",
+              "label": "move-node-to-workspace n",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace n --focus-follows-window"
+            },
+            {
+              "key": "N",
+              "type": "command",
+              "label": "move-node-to-workspace n",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace n"
+            },
+            {
+              "key": "o",
+              "type": "command",
+              "label": "move-node-to-workspace o",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace o --focus-follows-window"
+            },
+            {
+              "key": "O",
+              "type": "command",
+              "label": "move-node-to-workspace o",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace o"
+            },
+            {
+              "key": "p",
+              "type": "command",
+              "label": "move-node-to-workspace p",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace p --focus-follows-window"
+            },
+            {
+              "key": "P",
+              "type": "command",
+              "label": "move-node-to-workspace p",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace p"
+            },
+            {
+              "key": "q",
+              "type": "command",
+              "label": "move-node-to-workspace q",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace q --focus-follows-window"
+            },
+            {
+              "key": "Q",
+              "type": "command",
+              "label": "move-node-to-workspace q",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace q"
+            },
+            {
+              "key": "r",
+              "type": "command",
+              "label": "move-node-to-workspace r",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace r --focus-follows-window"
+            },
+            {
+              "key": "R",
+              "type": "command",
+              "label": "move-node-to-workspace r",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace r"
+            },
+            {
+              "key": "s",
+              "type": "command",
+              "label": "move-node-to-workspace s",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace s --focus-follows-window"
+            },
+            {
+              "key": "S",
+              "type": "command",
+              "label": "move-node-to-workspace s",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace s"
+            },
+            {
+              "key": "t",
+              "type": "command",
+              "label": "move-node-to-workspace t",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace t --focus-follows-window"
+            },
+            {
+              "key": "T",
+              "type": "command",
+              "label": "move-node-to-workspace t",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace t"
+            },
+            {
+              "key": "u",
+              "type": "command",
+              "label": "move-node-to-workspace u",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace u --focus-follows-window"
+            },
+            {
+              "key": "U",
+              "type": "command",
+              "label": "move-node-to-workspace u",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace u"
+            },
+            {
+              "key": "v",
+              "type": "command",
+              "label": "move-node-to-workspace v",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace v --focus-follows-window"
+            },
+            {
+              "key": "V",
+              "type": "command",
+              "label": "move-node-to-workspace v",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace v"
+            },
+            {
+              "key": "w",
+              "type": "command",
+              "label": "move-node-to-workspace w",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace w --focus-follows-window"
+            },
+            {
+              "key": "W",
+              "type": "command",
+              "label": "move-node-to-workspace w",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace w"
+            },
+            {
+              "key": "x",
+              "type": "command",
+              "label": "move-node-to-workspace x",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace x --focus-follows-window"
+            },
+            {
+              "key": "X",
+              "type": "command",
+              "label": "move-node-to-workspace x",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace x"
+            },
+            {
+              "key": "y",
+              "type": "command",
+              "label": "move-node-to-workspace y",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace y --focus-follows-window"
+            },
+            {
+              "key": "Y",
+              "type": "command",
+              "label": "move-node-to-workspace y",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace y"
+            },
+            {
+              "key": "z",
+              "type": "command",
+              "label": "move-node-to-workspace z",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace z --focus-follows-window"
+            },
+            {
+              "key": "Z",
+              "type": "command",
+              "label": "move-node-to-workspace z",
+              "value": "/opt/homebrew/bin/aerospace move-node-to-workspace z"
             }
-          ],
-          "key" : "j",
-          "label" : "join-with",
-          "type" : "group"
+          ]
         },
         {
-          "key" : "c",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/center"
+          "key": "M",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/maximize"
         },
         {
-          "key" : "r",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/reasonable-size"
-        },
-        {
-          "key" : "a",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/almost-maximize"
-        },
-        {
-          "key" : "M",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/maximize"
+          "key": "r",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/reasonable-size"
         }
-      ],
-      "key" : "w",
-      "type" : "group"
-    },
-    {
-      "key" : "n",
-      "type" : "command",
-      "value" : "osascript /Users/joshmedeski/.config/bin/macos-notification-click.applescript\n/macos-notification-click.applescript"
+      ]
     }
-  ],
-  "type" : "group"
+  ]
 }
