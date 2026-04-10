@@ -88,7 +88,19 @@
           "value": "raycast://extensions/raycast/window-management/center"
         },
         {
+          "key": "h",
+          "type": "command",
+          "label": "move left",
+          "value": "/opt/homebrew/bin/aerospace move left"
+        },
+        {
           "key": "j",
+          "type": "command",
+          "label": "move down",
+          "value": "/opt/homebrew/bin/aerospace move down"
+        },
+        {
+          "key": "J",
           "type": "group",
           "actions": [
             {
@@ -117,6 +129,18 @@
             }
           ],
           "label": "join-with"
+        },
+        {
+          "key": "k",
+          "type": "command",
+          "label": "move up",
+          "value": "/opt/homebrew/bin/aerospace move up"
+        },
+        {
+          "key": "l",
+          "type": "command",
+          "label": "move right",
+          "value": "/opt/homebrew/bin/aerospace move right"
         },
         {
           "key": "m",
