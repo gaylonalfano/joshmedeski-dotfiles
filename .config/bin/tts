@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Dependencies:
+#   uv tool install --force mlx-audio --prerelease=allow \
+#     --with "misaki[en]" --with num2words --with phonemizer \
+#     --with espeakng-loader --with "numpy>=1.26,<2" \
+#     --with "spacy>=3.7,<4" --with pip
+#   uv tool run --from mlx-audio python -m spacy download en_core_web_sm
+set -euo pipefail
+
+TEXT="${*:?Usage: tts <text>}"
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+
+mlx_audio.tts.generate \
+  --model mlx-community/Kokoro-82M-bf16 \
+  --text "$TEXT" \
+  --voice af_heart \
+  --speed 1.0 \
+  --lang_code a \
+  --output_path /tmp \
+  --file_prefix "tts_${TIMESTAMP}" \
+  --play
