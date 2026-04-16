@@ -146,6 +146,10 @@ if.app-id = 'company.thebrowser.Browser'
 run = ['move-node-to-workspace w']
 
 [[on-window-detected]]
+if.app-id = 'net.imput.helium'
+run = ['move-node-to-workspace w']
+
+[[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
 run = ['move-node-to-workspace m']
 
