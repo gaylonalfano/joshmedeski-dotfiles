@@ -9,6 +9,10 @@
 # Get argument for script key/name, default to dev
 BUILD_SCRIPT="${1:-build}"
 
+if [ -f justfile ]; then
+	just "$BUILD_SCRIPT"
+fi
+
 if [ -f Makefile ]; then
 	make "$BUILD_SCRIPT"
 fi
