@@ -1,9 +1,23 @@
 # Example Configuration
 repos:
+  sesh:
+    defaultBranch: main
+    worktreeTargetDir: /c/sesh
+    listDisplayMode: directory
+    bareRepoName: .git
+  joshmedeski.com:
+    defaultBranch: main
+    worktreeTargetDir: /c/jm
+    listDisplayMode: directory
+  treekanga:
+    defaultBranch: main
+    worktreeTargetDir: /c/treekanga
+    listDisplayMode: directory
   # Repository name
   nu:
     # Default branch used when no base branch is specified
     defaultBranch: main
+    listDisplayMode: directory
     #where should treekanga put the worktrees, assumes starting in the $HOME directory
     worktreeTargetDir: /c/nu
     postScript: ~/.config/bin/nu_setup
@@ -21,10 +35,3 @@ repos:
       - server
       - server
       - web
-
-  treekanga:
-    defaultBranch: main
-    worktreeTargetDir: /c/treekanga
-    # postScript: ~/.config/bin/treekanga_setup
-    zoxideFolders:
-      - /*
