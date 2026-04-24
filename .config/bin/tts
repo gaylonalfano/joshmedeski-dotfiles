@@ -1,17 +1,36 @@
 #!/usr/bin/env bash
-# Dependencies:
-#   uv tool install --force mlx-audio --prerelease=allow \
-#     --with "misaki[en]" --with num2words --with phonemizer \
+# Project:
+#   mlx-audio:    https://github.com/Blaizzy/mlx-audio
+#   PyPI:         https://pypi.org/project/mlx-audio/
+#   Kokoro model: https://huggingface.co/mlx-community/Kokoro-82M-4bit
+#
+# Install / Upgrade — install from git main (required for the 4bit model below;
+# PyPI 0.4.2 lacks PR #624 which fixes quantized checkpoint loading. Switch
+# back to `mlx-audio` from PyPI once 0.4.3 ships).
+#   uv tool install --force git+https://github.com/Blaizzy/mlx-audio.git \
+#     --prerelease=allow --with "misaki[en]" --with num2words \
 #     --with espeakng-loader --with "numpy>=1.26,<2" \
 #     --with "spacy>=3.7,<4" --with pip
-#   uv tool run --from mlx-audio python -m spacy download en_core_web_sm
+#
+# NOTE: do NOT add `--with phonemizer` — `misaki[en]` already pulls in
+# `phonemizer-fork` (has the `EspeakWrapper.set_data_path` API misaki calls).
+# Installing plain `phonemizer` alongside it is a file-write race in the shared
+# `phonemizer/` dir and can break misaki with:
+#   AttributeError: 'EspeakWrapper' has no attribute 'set_data_path'
+#
+# Then download the spaCy model into the tool's env (uv tool run creates an
+# ephemeral env without spacy, so invoke the tool's python directly):
+#   ~/.local/share/uv/tools/mlx-audio/bin/python -m spacy download en_core_web_sm
+#
+# Verify:
+#   uv tool list | grep mlx-audio
 set -euo pipefail
 
 TEXT="${*:?Usage: tts <text>}"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 
 mlx_audio.tts.generate \
-  --model mlx-community/Kokoro-82M-bf16 \
+  --model mlx-community/Kokoro-82M-4bit \
   --text "$TEXT" \
   --voice af_heart \
   --speed 1.0 \
