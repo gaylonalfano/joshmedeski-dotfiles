@@ -1,44 +1,40 @@
 {
-  "type": "group",
   "actions": [
     {
+      "iconPath": "clipboard",
       "key": "c",
       "label": "Ask Clipboard",
       "type": "url",
-      "value": "raycast://extensions/raycast/clipboard-history/ask-clipboard",
-      "iconPath": "clipboard"
+      "value": "raycast://extensions/raycast/clipboard-history/ask-clipboard"
     },
     {
-      "key": "d",
-      "label": "downloads",
-      "type": "group",
       "actions": [
         {
+          "iconPath": "tray.and.arrow.down",
           "key": "d",
           "label": "Latest Download",
           "type": "url",
-          "value": "raycast://extensions/thomas/downloads-manager/show-latest-download",
-          "iconPath": "tray.and.arrow.down"
-        },
-        {
-          "key": "r",
-          "label": "Drafts",
-          "type": "application",
-          "value": "/Applications/Drafts.app"
+          "value": "raycast://extensions/thomas/downloads-manager/show-latest-download"
         }
-      ]
+      ],
+      "key": "d",
+      "label": "downloads",
+      "type": "group"
     },
     {
-      "key": "m",
-      "label": "markdown",
-      "type": "group",
+      "key": "i",
+      "label": "Issue",
+      "type": "command",
+      "value": "/Users/joshmedeski/.config/bin/browser-dispatch"
+    },
+    {
       "actions": [
         {
+          "iconPath": "text.bubble",
           "key": "c",
           "label": "Markdown Callout",
           "type": "url",
-          "value": "raycast://ai-commands/markdown-callout-generator",
-          "iconPath": "text.bubble"
+          "value": "raycast://ai-commands/markdown-callout-generator"
         },
         {
           "key": "u",
@@ -46,7 +42,10 @@
           "type": "url",
           "value": "raycast://ai-commands/url-markdown-link"
         }
-      ]
+      ],
+      "key": "m",
+      "label": "markdown",
+      "type": "group"
     },
     {
       "key": "n",
@@ -55,9 +54,6 @@
       "value": "osascript /Users/joshmedeski/.config/bin/macos-notification-click.applescript\n/macos-notification-click.applescript"
     },
     {
-      "key": "r",
-      "label": "raycast",
-      "type": "group",
       "actions": [
         {
           "key": "c",
@@ -77,19 +73,19 @@
           "type": "url",
           "value": "raycast://confetti"
         }
-      ]
+      ],
+      "key": "r",
+      "label": "raycast",
+      "type": "group"
     },
     {
+      "iconPath": "inset.filled.rectangle.and.cursorarrow",
       "key": "s",
       "label": "Ask Selected Text",
       "type": "url",
-      "value": "raycast://extensions/raycast/selected-text/ask-selected-text",
-      "iconPath": "inset.filled.rectangle.and.cursorarrow"
+      "value": "raycast://extensions/raycast/selected-text/ask-selected-text"
     },
     {
-      "key": "w",
-      "label": "window",
-      "type": "group",
       "actions": [
         {
           "key": "a",
@@ -116,9 +112,6 @@
           "value": "/opt/homebrew/bin/aerospace move down"
         },
         {
-          "key": "J",
-          "label": "join-with",
-          "type": "group",
           "actions": [
             {
               "key": "h",
@@ -144,7 +137,10 @@
               "type": "command",
               "value": "/opt/homebrew/bin/aerospace join-with right"
             }
-          ]
+          ],
+          "key": "J",
+          "label": "join-with",
+          "type": "group"
         },
         {
           "key": "k",
@@ -159,9 +155,6 @@
           "value": "/opt/homebrew/bin/aerospace move right"
         },
         {
-          "key": "m",
-          "label": "move to workspace",
-          "type": "group",
           "actions": [
             {
               "key": "a",
@@ -475,7 +468,10 @@
               "type": "command",
               "value": "/opt/homebrew/bin/aerospace move-node-to-workspace z"
             }
-          ]
+          ],
+          "key": "m",
+          "label": "move to workspace",
+          "type": "group"
         },
         {
           "key": "M",
@@ -489,7 +485,12 @@
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/reasonable-size"
         }
-      ]
+      ],
+      "key": "w",
+      "label": "window",
+      "type": "group"
     }
-  ]
+  ],
+  "type": "group"
 }
+
