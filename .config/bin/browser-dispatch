@@ -95,6 +95,18 @@ github_worktree() {
     fi
   fi
 
+  # When invoked from osascript there is no $TMUX, so sesh's --switch has no
+  # client to act on. Explicitly switch the active tmux client.
+  local tmux_client session
+  tmux_client=$(tmux list-clients -F '#{client_name}' 2>/dev/null | head -n1)
+  if [[ -n "$tmux_client" ]]; then
+    session=$(tmux list-sessions -F '#{session_name} #{session_path}' 2>/dev/null \
+      | awk -v p="$target" '$2 == p {print $1; exit}')
+    if [[ -n "$session" ]]; then
+      tmux switch-client -c "$tmux_client" -t "$session"
+    fi
+  fi
+
   osascript -e 'tell application "Wezterm" to activate'
 }
 
