@@ -3,12 +3,13 @@
 # Map GitHub "org/repo" -> local repo directory
 declare -A REPO_DIRS=(
   ["Nutiliti/nutiliti"]="$HOME/c/nu"
+  ["joshmedeski/joshmedeski.com"]="$HOME/c/jm"
   ["joshmedeski/sesh"]="$HOME/c/sesh"
 )
 
 # Map GitHub "org/repo" -> branch prefix for new worktrees (e.g. "jam" -> "jam/123-1")
 declare -A REPO_BRANCH_PREFIXES=(
-  ["joshmedeski/sesh"]="jam"
+  ["nutiliti/nutiliti"]="jam"
 )
 
 # Map GitHub "org/repo" -> sesh setup command to run on new worktree (optional)
@@ -29,20 +30,32 @@ github_worktree() {
     exit 1
   fi
 
-  local branch_prefix="${REPO_BRANCH_PREFIXES[$repo_key]:-claude}"
+  local branch_prefix="${REPO_BRANCH_PREFIXES[$repo_key]}"
   local setup_cmd="${REPO_SETUP_CMDS[$repo_key]}"
   local issue
+  local use_pr_checkout=0
 
   if [[ "$kind" == "pull" ]]; then
-    issue=$(gh pr view "$number" --repo "$repo_key" --json closingIssuesReferences --jq '.closingIssuesReferences[0].number' 2>/dev/null)
-    if [[ -z "$issue" ]]; then
-      issue=$(gh pr view "$number" --repo "$repo_key" --json title,body --jq '"\(.title)\n\(.body)"' 2>/dev/null | grep -oE '#[0-9]+' | head -n1 | tr -d '#')
-    fi
-    if [[ -n "$issue" ]]; then
-      echo "PR #$number references issue #$issue"
-    else
+    local pr_author me
+    pr_author=$(gh pr view "$number" --repo "$repo_key" --json author --jq '.author.login' 2>/dev/null)
+    me=$(gh api user --jq '.login' 2>/dev/null)
+
+    if [[ -n "$pr_author" && "$pr_author" != "$me" ]]; then
       issue="$number"
-      echo "PR #$number has no issue reference; using PR number"
+      use_pr_checkout=1
+      echo "PR #$number authored by @$pr_author; checking out PR branch"
+    else
+      issue=$(gh pr view "$number" --repo "$repo_key" --json closingIssuesReferences --jq '.closingIssuesReferences[0].number' 2>/dev/null)
+      if [[ -z "$issue" ]]; then
+        issue=$(gh pr view "$number" --repo "$repo_key" --json title,body --jq '"\(.title)\n\(.body)"' 2>/dev/null | grep -oE '#[0-9]+' | head -n1 | tr -d '#')
+      fi
+      if [[ -n "$issue" ]]; then
+        echo "PR #$number references issue #$issue"
+      else
+        issue="$number"
+        use_pr_checkout=1
+        echo "PR #$number has no issue reference; checking out PR branch"
+      fi
     fi
   else
     issue="$number"
@@ -54,10 +67,27 @@ github_worktree() {
   local target="$repo_dir/.wk/$issue"
 
   if [[ -d "$target" ]]; then
+    if [[ "$use_pr_checkout" == "1" ]]; then
+      cd "$target" || exit 1
+      gh pr checkout "$number" --repo "$repo_key"
+      git pull --ff-only 2>/dev/null || true
+    fi
     sesh connect --switch "$target"
   else
-    git worktree add ".wk/$issue" -b "$branch_prefix/$issue-1" --no-track origin/main
-    cd "$target" || exit 1
+    if [[ "$use_pr_checkout" == "1" ]]; then
+      git worktree add --detach ".wk/$issue" origin/main
+      cd "$target" || exit 1
+      gh pr checkout "$number" --repo "$repo_key"
+    else
+      local branch_name
+      if [[ -n "$branch_prefix" ]]; then
+        branch_name="$branch_prefix/$issue-1"
+      else
+        branch_name="$issue"
+      fi
+      git worktree add ".wk/$issue" -b "$branch_name" --no-track origin/main
+      cd "$target" || exit 1
+    fi
     if [[ -n "$setup_cmd" ]]; then
       sesh connect --switch --command "$setup_cmd" .
     else
@@ -65,7 +95,7 @@ github_worktree() {
     fi
   fi
 
-  osascript -e 'tell application "WezTerm" to activate'
+  osascript -e 'tell application "Wezterm" to activate'
 }
 
 URL=$(osascript -e 'tell application "Helium" to return URL of active tab of front window' 2>/dev/null)
